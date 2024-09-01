@@ -1,0 +1,4 @@
+VITE_HOST=localhost
+VITE_PORT=5000
+
+VITE_ENV=development

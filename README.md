@@ -1,18 +1,16 @@
-# walker-ui
+# WALKER UI
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a UI Components library.
 
-## Recommended IDE Setup
+## Login into npm using the following command
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+```sh
+npm login
+```
 
-## Type Support for `.vue` Imports in TS
+## Setup environment
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Create a `.env` file and copy all the content from `.env.example`.
 
 ## Project Setup
 
@@ -26,14 +24,51 @@ npm install
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Type-Check, Compile, and Minify for Production
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Lint with **Prettier**
 
 ```sh
-npm run lint
+npm run format
+```
+
+### Lint with **ESLint**
+
+```sh
+npm run lint:fix
+```
+
+### Type checks
+
+```sh
+npm run type-checks
+```
+
+The project already has `husky` and `pre-commit` set up, which will trigger when you try to make a commit.
+
+## Steps to publish new versions
+
+1. Merge your branch to `main` with the updated `dist/` folder.
+2. Run the following commands depending on the changes:
+
+### Publish major changes
+
+```sh
+npm run release:major
+```
+
+### Publish minor changes
+
+```sh
+npm run release:minor
+```
+
+### Publish patch changes
+
+```sh
+npm run release:patch
 ```
