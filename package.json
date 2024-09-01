@@ -6,9 +6,6 @@
     "type": "git",
     "url": "https://github.com/swearwalker/walker-ui.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "files": [
     "dist"
   ],
