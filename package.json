@@ -1,10 +1,10 @@
 {
   "name": "walker-ui",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/swearwalker/walker-ui"
+    "url": "https://github.com/swearwalker/walker-ui.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
