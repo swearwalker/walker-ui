@@ -27,9 +27,9 @@
     "lint:fix": "eslint src --fix --ext .ts,.vue",
     "types": "vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
-    "release:major": "standard-version --release-as major && git push --follow-tags && npm publish",
-    "release:minor": "standard-version --release-as minor && git push --follow-tags && npm publish",
-    "release:patch": "standard-version --release-as patch && git push --follow-tags && npm publish"
+    "release:major": "standard-version --release-as major && git push --follow-tags && npm publish--access public",
+    "release:minor": "standard-version --release-as minor && git push --follow-tags && npm publish--access public",
+    "release:patch": "standard-version --release-as patch && git push --follow-tags && npm publish--access public"
   },
   "dependencies": {
     "@vueuse/components": "^11.0.3",
