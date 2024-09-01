@@ -1,11 +1,23 @@
 {
-  "files": [],
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "exclude": ["src/playground/**"],
+  "compilerOptions": {
+    "lib": ["es5", "es6", "es7", "es2017", "dom", "dom.iterable"],
+    "baseUrl": ".",
+    "ignoreDeprecations": "5.0",
+    "noEmit": false,
+    "outDir": "dist",
+    "declaration": true,
+    "types": ["node"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+
   "references": [
     {
       "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
     }
   ]
 }
