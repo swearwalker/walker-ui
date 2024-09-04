@@ -3,7 +3,8 @@
     <div :class="[{ 'small-round': smallRound, active: value }, color]" class="w-toggle__container">
       <div :class="{ active: value }" class="w-toggle__slider" />
     </div>
-    <span v-if="label" class="w-toggle__label">{{ label }}</span>
+    <slot name="default" />
+    <span v-if="label && !$slots.default" class="w-toggle__label">{{ label }}</span>
   </div>
 </template>
 
@@ -41,76 +42,64 @@
       @apply flex-row-reverse;
     }
 
-    &.sm {
-      .w-toggle__container {
-        @apply w-6 h-3;
-      }
+    &.sm .w-toggle__container {
+      @apply w-6 h-3;
+    }
 
-      .w-toggle__slider {
-        @apply w-2 h-2;
+    &.sm .w-toggle__slider {
+      @apply w-2 h-2;
 
-        &.active {
-          @apply left-3;
-        }
-      }
-
-      .w-toggle__label {
-        @apply ml-1 text-xs;
-      }
-
-      &.left {
-        .w-toggle__label {
-          @apply mr-1 ml-0;
-        }
+      &.active {
+        @apply left-3;
       }
     }
 
-    &.md {
-      .w-toggle__container {
-        @apply w-8 h-4;
-      }
+    &.sm .w-toggle__label {
+      @apply ml-1 text-xs;
+    }
 
-      .w-toggle__slider {
-        @apply w-3 h-3;
+    &.sm.left .w-toggle__label {
+      @apply mr-1 ml-0;
+    }
 
-        &.active {
-          @apply left-4;
-        }
-      }
+    &.md .w-toggle__container {
+      @apply w-8 h-4;
+    }
 
-      .w-toggle__label {
-        @apply ml-2 text-sm;
-      }
+    &.md .w-toggle__slider {
+      @apply w-3 h-3;
 
-      &.left {
-        .w-toggle__label {
-          @apply mr-2 ml-0;
-        }
+      &.active {
+        @apply left-4;
       }
     }
 
-    &.lg {
-      .w-toggle__container {
-        @apply w-10 h-5;
-      }
+    &.md .w-toggle__label {
+      @apply ml-2 text-sm;
+    }
 
-      .w-toggle__slider {
-        @apply w-4 h-4;
+    &.md.left .w-toggle__label {
+      @apply mr-2 ml-0;
+    }
 
-        &.active {
-          @apply left-5;
-        }
-      }
+    &.lg .w-toggle__container {
+      @apply w-10 h-5;
+    }
 
-      .w-toggle__label {
-        @apply ml-3 text-lg;
-      }
+    &.lg .w-toggle__slider {
+      @apply w-4 h-4;
 
-      &.left {
-        .w-toggle__label {
-          @apply mr-3 ml-0;
-        }
+      &.active {
+        @apply left-5;
       }
+    }
+
+    &.lg .w-toggle__label {
+      @apply ml-3 text-lg;
+    }
+
+    &.lg.left .w-toggle__label {
+      @apply mr-3 ml-0;
     }
 
     &.disabled {
@@ -118,7 +107,7 @@
     }
 
     &__container {
-      @apply relative flex items-center p-1 rounded-full border border-gray-200 transition-all;
+      @apply relative flex items-center p-1 rounded-full border border-gray-200 dark:border-gray-700 transition-all;
 
       &.small-round {
         @apply rounded;
@@ -176,59 +165,57 @@
         }
       }
 
-      &.active {
-        &.primary {
-          @apply border-primary-500;
+      &.active.primary {
+        @apply border-primary-500;
 
-          .w-toggle__slider {
-            @apply bg-primary-500;
-          }
+        .w-toggle__slider {
+          @apply bg-primary-500;
         }
+      }
 
-        &.secondary {
-          @apply border-secondary-500;
+      &.active.secondary {
+        @apply border-secondary-500;
 
-          .w-toggle__slider {
-            @apply bg-secondary-500;
-          }
+        .w-toggle__slider {
+          @apply bg-secondary-500;
         }
+      }
 
-        &.success {
-          @apply border-success-500;
+      &.active.success {
+        @apply border-success-500;
 
-          .w-toggle__slider {
-            @apply bg-success-500;
-          }
+        .w-toggle__slider {
+          @apply bg-success-500;
         }
+      }
 
-        &.warning {
-          @apply border-warning-500;
+      &.active.warning {
+        @apply border-warning-500;
 
-          .w-toggle__slider {
-            @apply bg-warning-500;
-          }
+        .w-toggle__slider {
+          @apply bg-warning-500;
         }
+      }
 
-        &.danger {
-          @apply border-danger-500;
+      &.active.danger {
+        @apply border-danger-500;
 
-          .w-toggle__slider {
-            @apply bg-danger-500;
-          }
+        .w-toggle__slider {
+          @apply bg-danger-500;
         }
+      }
 
-        &.info {
-          @apply border-info-500;
+      &.active.info {
+        @apply border-info-500;
 
-          .w-toggle__slider {
-            @apply bg-info-500;
-          }
+        .w-toggle__slider {
+          @apply bg-info-500;
         }
       }
     }
 
     &__slider {
-      @apply absolute left-0.5 w-3 h-3 rounded-full bg-gray-200 transition-all;
+      @apply absolute left-0.5 w-3 h-3 rounded-full bg-gray-200 dark:bg-gray-700 transition-all;
     }
   }
 </style>

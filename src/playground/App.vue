@@ -3,6 +3,7 @@
     <div class="container">
       <h1 class="header__title">Walker UI</h1>
       <p class="header__description">This is a UI Components library.</p>
+      <WToggle v-model="isDark" :label="isDark ? 'Dark theme' : 'Light theme'" />
     </div>
   </header>
   <main class="main">
@@ -16,11 +17,14 @@
 
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { WTabs } from '@/components'
+  import { WTabs, WToggle } from '@/components'
   import TabsSection from '@/playground/components/TabsSection.vue'
   import TogglesSection from '@/playground/components/TogglesSection.vue'
+  import { useDark } from '@vueuse/core'
 
-  const currentTab = ref('toggles')
+  const isDark = useDark()
+
+  const currentTab = ref('tabs')
   const tabs = [
     {
       label: 'Tabs section',
@@ -34,6 +38,12 @@
 </script>
 
 <style lang="scss">
+  html,
+  body,
+  #app {
+    @apply w-full h-full bg-gray-50 text-gray-900 dark:text-gray-200 dark:bg-gray-900;
+  }
+
   .header {
     @apply mb-8 py-4;
 
@@ -42,7 +52,7 @@
     }
 
     &__description {
-      @apply text-sm text-gray-500;
+      @apply text-sm text-gray-500 mb-2;
     }
   }
 
@@ -55,6 +65,10 @@
       &:last-of-type {
         @apply mb-0;
       }
+    }
+
+    &__wrapper {
+      @apply flex flex-col gap-y-2;
     }
 
     &__label {

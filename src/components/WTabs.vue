@@ -53,7 +53,7 @@
 
 <style lang="scss" scoped>
   .w-tabs {
-    @apply w-full flex items-center border-b border-gray-200;
+    @apply w-full flex items-center border-b border-gray-200 dark:border-gray-700;
 
     &.right {
       @apply justify-end;
