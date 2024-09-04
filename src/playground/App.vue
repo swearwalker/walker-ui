@@ -9,6 +9,7 @@
     <div class="container">
       <WTabs v-model="currentTab" :tabs="tabs" />
       <TabsSection v-if="currentTab === 'tabs'" />
+      <TogglesSection v-else-if="currentTab === 'toggles'" />
     </div>
   </main>
 </template>
@@ -17,12 +18,17 @@
   import { ref } from 'vue'
   import { WTabs } from '@/components'
   import TabsSection from '@/playground/components/TabsSection.vue'
+  import TogglesSection from '@/playground/components/TogglesSection.vue'
 
-  const currentTab = ref('tabs')
+  const currentTab = ref('toggles')
   const tabs = [
     {
       label: 'Tabs section',
       value: 'tabs',
+    },
+    {
+      label: 'Toggles section',
+      value: 'toggles',
     },
   ]
 </script>
