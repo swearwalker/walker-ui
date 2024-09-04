@@ -20,7 +20,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run types",
+    "build": "vite build && npm run type-checks",
     "clean": "rm -rf node_modules/",
     "format": "prettier --write src/",
     "lint": "eslint src --ext .ts,.vue",
