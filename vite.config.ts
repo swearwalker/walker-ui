@@ -2,9 +2,10 @@ import { defineConfig, loadEnv } from 'vite'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import svgLoader from 'vite-svg-loader'
+import VueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig(({ command, mode }) => {
-  const plugins = [vue(), svgLoader()]
+  const plugins = [vue(), svgLoader(), VueDevTools()]
   const env = loadEnv(mode, process.cwd(), '')
   const resolveConfig = {
     alias: {
