@@ -1,4 +1,4 @@
 export enum TabsPosition {
   LEFT = 'left',
-  RIGHT = 'right'
+  RIGHT = 'right',
 }
