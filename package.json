@@ -1,6 +1,6 @@
 {
   "name": "@swearwalker/walker-ui",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "type": "module",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
     "format": "prettier --write src/",
     "lint": "eslint src --ext .ts,.vue",
     "lint:fix": "eslint src --fix --ext .ts,.vue",
-    "type-checks": "vue-tsc --emitDeclarationOnly",
+    "type-checks": "vue-tsc --declaration --emitDeclarationOnly",
     "preview": "vite preview",
     "release:major": "standard-version --release-as major && git push --follow-tags && npm publish --access public",
     "release:minor": "standard-version --release-as minor && git push --follow-tags && npm publish --access public",
@@ -34,13 +34,14 @@
   "dependencies": {
     "@vueuse/components": "^11.0.3",
     "@vueuse/core": "^11.0.3",
-    "vue": "^3.4.29"
+    "vue": "^3.5.3"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
     "@tailwindcss/typography": "^0.5.14",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@vitejs/plugin-vue": "^5.1.2",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
