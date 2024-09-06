@@ -1,3 +1,4 @@
 import WTabs from './WTabs.vue';
 import WToggle from './WToggle.vue';
-export { WTabs, WToggle };
+import WIcon from './WIcon.vue';
+export { WTabs, WToggle, WIcon };

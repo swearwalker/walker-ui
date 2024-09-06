@@ -38,7 +38,7 @@
 <script setup lang="ts">
   import { WTabs } from '../../components'
   import { ref } from 'vue'
-  import { ColorScheme, Direction, Tab, TabsPosition } from '../../types'
+  import { ColorScheme, Direction, TabsPosition, type Tab } from '../../types'
 
   const currentTab1 = ref('tab1')
   const currentTab2 = ref(ColorScheme.SECONDARY)
