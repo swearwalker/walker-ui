@@ -39,7 +39,7 @@
 <script setup lang="ts">
   import { WToggle } from '../../components'
   import { ref } from 'vue'
-  import { ToggleLabelPosition, ToggleSize } from '../../types'
+  import { ColorScheme, ToggleLabelPosition, ToggleSize } from '../../types'
 
   const toggle1 = ref(true)
   const toggle2 = ref(true)
@@ -49,7 +49,14 @@
   const toggle6 = ref(true)
   const toggle7 = ref(true)
 
-  const colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info']
+  const colors = [
+    ColorScheme.PRIMARY,
+    ColorScheme.SECONDARY,
+    ColorScheme.SUCCESS,
+    ColorScheme.DANGER,
+    ColorScheme.WARNING,
+    ColorScheme.INFO,
+  ]
 </script>
 
 <style scoped lang="scss"></style>

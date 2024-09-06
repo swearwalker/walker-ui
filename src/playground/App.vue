@@ -10,7 +10,8 @@
     <div class="container">
       <WTabs v-model="currentTab" :tabs="tabs" />
       <TabsSection v-if="currentTab === 'tabs'" />
-      <TogglesSection v-else-if="currentTab === 'toggles'" />
+      <TogglesSection v-if="currentTab === 'toggles'" />
+      <IconsSection v-if="currentTab === 'icons'" />
     </div>
   </main>
 </template>
@@ -21,11 +22,13 @@
   import TabsSection from './components/TabsSection.vue'
   import TogglesSection from './components/TogglesSection.vue'
   import { useDark } from '@vueuse/core'
+  import type { Tab } from '../types'
+  import IconsSection from './components/IconsSection.vue'
 
   const isDark = useDark()
 
   const currentTab = ref('tabs')
-  const tabs = [
+  const tabs: Tab[] = [
     {
       label: 'Tabs section',
       value: 'tabs',
@@ -33,6 +36,10 @@
     {
       label: 'Toggles section',
       value: 'toggles',
+    },
+    {
+      label: 'Icons section',
+      value: 'icons',
     },
   ]
 </script>
@@ -73,6 +80,10 @@
 
     &__label {
       @apply text-lg font-bold mb-2;
+    }
+
+    &__empty-place {
+      @apply flex-1 ml-auto;
     }
   }
 </style>
