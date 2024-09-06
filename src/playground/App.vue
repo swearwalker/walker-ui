@@ -21,11 +21,12 @@
   import TabsSection from './components/TabsSection.vue'
   import TogglesSection from './components/TogglesSection.vue'
   import { useDark } from '@vueuse/core'
+  import { Tab } from '../types'
 
   const isDark = useDark()
 
   const currentTab = ref('tabs')
-  const tabs = [
+  const tabs: Tab[] = [
     {
       label: 'Tabs section',
       value: 'tabs',

@@ -38,10 +38,10 @@
 <script setup lang="ts">
   import { WTabs } from '../../components'
   import { ref } from 'vue'
-  import { Direction, TabsPosition } from '../../types'
+  import { ColorScheme, Direction, Tab, TabsPosition } from '../../types'
 
   const currentTab1 = ref('tab1')
-  const currentTab2 = ref('success')
+  const currentTab2 = ref(ColorScheme.SECONDARY)
   const currentTab3 = ref('tab1')
   const currentTab4 = ref('tab1')
   const currentTab5 = ref('tab1')
@@ -49,7 +49,7 @@
   const currentTab7 = ref('tab1')
   const currentTab8 = ref('tab1')
 
-  const tabs1 = [
+  const tabs1: Tab[] = [
     {
       label: 'Tab 1',
       value: 'tab1',
@@ -64,7 +64,7 @@
     },
   ]
 
-  const tabs2 = [
+  const tabs2: Tab[] = [
     {
       label: 'Primary',
       value: 'primary',
@@ -91,7 +91,7 @@
     },
   ]
 
-  const tabs3 = [
+  const tabs3: Tab[] = [
     {
       label: 'Tab 1',
       value: 'tab1',
@@ -106,7 +106,7 @@
     },
   ]
 
-  const tabs4 = [
+  const tabs4: Tab[] = [
     {
       label: 'Tab 1',
       value: 'tab1',
@@ -122,7 +122,7 @@
     },
   ]
 
-  const tabs5 = [
+  const tabs5: Tab[] = [
     {
       label: 'Tab 1',
       value: 'tab1',
@@ -137,7 +137,7 @@
     },
   ]
 
-  const tabs6 = [
+  const tabs6: Tab[] = [
     {
       label: 'Tab 1',
       value: 'tab1',
@@ -152,7 +152,7 @@
     },
   ]
 
-  const tabs7 = [
+  const tabs7: Tab[] = [
     {
       label: 'Tab 1',
       value: 'tab1',
@@ -167,7 +167,7 @@
     },
   ]
 
-  const tabs8 = [
+  const tabs8: Tab[] = [
     {
       label: 'Tab 1',
       value: 'tab1',
