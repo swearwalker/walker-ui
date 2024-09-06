@@ -37,9 +37,9 @@
 </template>
 
 <script setup lang="ts">
-  import { WToggle } from '@/components'
+  import { WToggle } from '../../components'
   import { ref } from 'vue'
-  import { ToggleLabelPosition, ToggleSize } from '@/types'
+  import { ToggleLabelPosition, ToggleSize } from '../../types'
 
   const toggle1 = ref(true)
   const toggle2 = ref(true)

@@ -1,4 +1,4 @@
-import { ColorScheme, ToggleLabelPosition, ToggleSize } from '@/types';
+import { ColorScheme, ToggleLabelPosition, ToggleSize } from '../../types';
 export interface ToggleProps {
     color?: ColorScheme;
     disabled?: boolean;

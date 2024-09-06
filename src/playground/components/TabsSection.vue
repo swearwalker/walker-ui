@@ -36,9 +36,9 @@
 </template>
 
 <script setup lang="ts">
-  import { WTabs } from '@/components'
+  import { WTabs } from '../../components'
   import { ref } from 'vue'
-  import { Direction, TabsPosition } from '@/types'
+  import { Direction, TabsPosition } from '../../types'
 
   const currentTab1 = ref('tab1')
   const currentTab2 = ref('success')

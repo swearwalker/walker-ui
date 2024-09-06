@@ -17,9 +17,9 @@
 
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { WTabs, WToggle } from '@/components'
-  import TabsSection from '@/playground/components/TabsSection.vue'
-  import TogglesSection from '@/playground/components/TogglesSection.vue'
+  import { WTabs, WToggle } from '../components'
+  import TabsSection from './components/TabsSection.vue'
+  import TogglesSection from './components/TogglesSection.vue'
   import { useDark } from '@vueuse/core'
 
   const isDark = useDark()

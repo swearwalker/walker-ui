@@ -24,23 +24,19 @@
 </template>
 
 <script setup lang="ts">
-  import { ColorScheme, Direction, TabsPosition, type TabsProps } from '@/types'
-  import type { PropType } from 'vue'
+  import { ColorScheme, Direction, TabsPosition, type TabsProps } from '../types'
 
-  const value = defineModel('modelValue', {
-    type: [String, Number] as PropType<string | number>,
-    required: true,
-  })
+  const value = defineModel<string | number>('modelValue', { required: true })
 
-  withDefaults(defineProps<TabsProps>(), {
-    tabLabel: 'label',
-    tabValue: 'value',
-    direction: Direction.HORIZONTAL,
-    color: ColorScheme.PRIMARY,
-    position: TabsPosition.LEFT,
-    compact: false,
-    flexible: false,
-  })
+  const {
+    tabLabel = 'label',
+    tabValue = 'value',
+    direction = Direction.HORIZONTAL,
+    color = ColorScheme.PRIMARY,
+    position = TabsPosition.LEFT,
+    compact = false,
+    flexible = false,
+  } = defineProps<TabsProps>()
 
   const emit = defineEmits(['update:modelValue'])
 

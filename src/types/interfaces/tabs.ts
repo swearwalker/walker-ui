@@ -1,4 +1,4 @@
-import { ColorScheme, Direction, TabsPosition } from '@/types'
+import { ColorScheme, Direction, TabsPosition } from '../../types'
 
 export interface Tab {
   label: string

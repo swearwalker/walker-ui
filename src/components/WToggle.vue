@@ -9,26 +9,25 @@
 </template>
 
 <script setup lang="ts">
-  import { ColorScheme, ToggleLabelPosition, type ToggleProps, ToggleSize } from '@/types'
+  import { ColorScheme, ToggleLabelPosition, type ToggleProps, ToggleSize } from '../types'
 
-  const value = defineModel('modelValue', {
-    type: Boolean,
+  const value = defineModel<boolean>('modelValue', {
     required: true,
   })
 
-  const props = withDefaults(defineProps<ToggleProps>(), {
-    color: ColorScheme.PRIMARY,
-    size: ToggleSize.MD,
-    labelPosition: ToggleLabelPosition.RIGHT,
-    disabled: false,
-    smallRound: false,
-    label: '',
-  })
+  const {
+    color = ColorScheme.PRIMARY,
+    size = ToggleSize.MD,
+    labelPosition = ToggleLabelPosition.RIGHT,
+    disabled = false,
+    smallRound = false,
+    label = '',
+  } = defineProps<ToggleProps>()
 
   const emit = defineEmits(['update:modelValue'])
 
   const toggle = () => {
-    if (!props.disabled) {
+    if (!disabled) {
       emit('update:modelValue', !value.value)
     }
   }
