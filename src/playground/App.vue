@@ -12,6 +12,7 @@
       <TabsSection v-if="currentTab === 'tabs'" />
       <TogglesSection v-if="currentTab === 'toggles'" />
       <IconsSection v-if="currentTab === 'icons'" />
+      <InputsSection v-if="currentTab === 'inputs'" />
     </div>
   </main>
 </template>
@@ -19,15 +20,16 @@
 <script setup lang="ts">
   import { ref } from 'vue'
   import { WTabs, WToggle } from '../components'
-  import TabsSection from './components/TabsSection.vue'
-  import TogglesSection from './components/TogglesSection.vue'
   import { useDark } from '@vueuse/core'
   import type { Tab } from '../types'
   import IconsSection from './components/IconsSection.vue'
+  import TabsSection from './components/TabsSection.vue'
+  import TogglesSection from './components/TogglesSection.vue'
+  import InputsSection from './components/InputsSection.vue'
 
   const isDark = useDark()
 
-  const currentTab = ref('tabs')
+  const currentTab = ref('inputs')
   const tabs: Tab[] = [
     {
       label: 'Tabs section',
@@ -41,13 +43,18 @@
       label: 'Icons section',
       value: 'icons',
     },
+    {
+      label: 'Inputs section',
+      value: 'inputs',
+    },
   ]
 </script>
 
 <style lang="scss">
   html,
   body,
-  #app {
+  #app,
+  main {
     @apply w-full h-full bg-gray-50 text-gray-900 dark:text-gray-200 dark:bg-gray-900;
   }
 
@@ -67,7 +74,7 @@
     @apply p-4;
 
     &__item {
-      @apply w-full flex flex-col mb-8;
+      @apply w-full flex flex-col mb-8 items-start;
 
       &:last-of-type {
         @apply mb-0;

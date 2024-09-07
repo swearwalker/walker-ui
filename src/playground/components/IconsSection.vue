@@ -48,6 +48,7 @@
   const icons = ref<string[]>([
     'add',
     'block',
+    'check',
     'chevron-down',
     'chevron-left',
     'chevron-right',
@@ -74,6 +75,7 @@
     'show',
     'user',
     'users',
+    'warning',
   ])
   const iconSizes = ref<number[]>([12, 16, 20, 24, 32, 40, 48])
   const colors = [

@@ -35,7 +35,7 @@
 
 <style lang="scss" scoped>
   .w-toggle {
-    @apply flex items-center cursor-pointer self-start;
+    @apply flex items-center cursor-pointer;
 
     &.left {
       @apply flex-row-reverse;
