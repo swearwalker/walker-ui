@@ -22,7 +22,7 @@
     </div>
     <div class="section__item">
       <span class="section__label">Clearable Input</span>
-      <WInput v-model="value6" label="Clearable input" clearable suffix-icon="info" />
+      <WInput v-model="value6" label="Clearable input" clearable suffix-icon="info-circle" />
     </div>
     <div class="section__item">
       <span class="section__label">Help Input</span>
@@ -38,7 +38,7 @@
     </div>
     <div class="section__item">
       <span class="section__label">Icons Input</span>
-      <WInput v-model="value10" label="Icons input" prefix-icon="search" suffix-icon="info" />
+      <WInput v-model="value10" label="Icons input" prefix-icon="search" suffix-icon="info-circle" />
     </div>
     <div class="section__item">
       <span class="section__label">Compact Input</span>
@@ -54,7 +54,7 @@
     </div>
     <div class="section__item">
       <span class="section__label">Error Input</span>
-      <WInput v-model="value14" label="Error input" error suffix-icon="info" />
+      <WInput v-model="value14" label="Error input" error suffix-icon="error-circle" />
     </div>
     <div class="section__item">
       <span class="section__label">Slots Input</span>
@@ -66,6 +66,10 @@
           <WToggle v-model="toggle2" class="ml-2" />
         </template>
       </WInput>
+    </div>
+    <div class="section__item">
+      <span class="section__label">Password Input</span>
+      <WInput v-model="value16" label="Password input" password />
     </div>
     <div class="section__item flex-1">
       <span class="section__label">Full Input</span>

@@ -8,6 +8,7 @@
         <input
           v-model="value"
           class="w-input__field"
+          :type="password && !showPassword ? 'password' : 'text'"
           :placeholder="placeholder"
           :disabled="disabled"
           :readonly="readonly"
@@ -16,12 +17,20 @@
           @blur="onBlur"
         />
         <WIcon v-if="clearable && value" icon="dismiss" class="w-input__icon w-input__icon--clear" @click="clear" />
+        <WIcon
+          v-if="password && value"
+          :icon="showPassword ? 'show' : 'hide'"
+          class="w-input__icon w-input__icon--password"
+          @click="togglePassword"
+        />
         <slot name="suffix" />
         <WIcon v-if="suffixIcon" :icon="suffixIcon" class="w-input__icon w-input__icon--suffix" @click="suffix" />
       </div>
     </div>
-    <span v-if="helpText" class="w-input__help">{{ helpText }}</span>
-    <ul class="w-input__errors">
+    <slot v-if="helpText" name="help" />
+    <span v-if="helpText && !$slots.help" class="w-input__help">{{ helpText }}</span>
+    <slot v-if="errorsText.length" name="error" />
+    <ul v-if="errorsText.length && !$slots.error" class="w-input__errors">
       <li v-for="(errorText, index) in errorsText" :key="index" class="w-input__error">{{ errorText }}</li>
     </ul>
   </div>
@@ -30,7 +39,7 @@
 <script setup lang="ts">
   import { WIcon } from '../components'
   import type { InputProps } from '@/types'
-  import { computed } from 'vue'
+  import { computed, ref } from 'vue'
 
   const value = defineModel<string | number>({ required: true })
 
@@ -48,9 +57,12 @@
     error = false,
     warning = false,
     placeholder,
+    password = false,
   } = defineProps<InputProps>()
 
-  const emit = defineEmits(['prefix', 'suffix', 'clear', 'input', 'focus', 'blur'])
+  const emit = defineEmits(['prefix', 'suffix', 'clear', 'input', 'focus', 'blur', 'toggle-password'])
+
+  const showPassword = ref(false)
 
   const errorsText = computed(() => {
     if (typeof errors === 'string') return [errors]
@@ -74,6 +86,11 @@
   const onFocus = () => emit('focus')
 
   const onBlur = () => emit('blur')
+
+  const togglePassword = () => {
+    showPassword.value = !showPassword.value
+    emit('toggle-password', showPassword.value)
+  }
 </script>
 
 <style scoped lang="scss">
@@ -167,6 +184,10 @@
 
       &--clear {
         @apply cursor-pointer ml-2 transition-all text-danger-500;
+      }
+
+      &--password {
+        @apply cursor-pointer ml-2 transition-all;
       }
     }
 

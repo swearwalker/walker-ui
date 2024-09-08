@@ -29,7 +29,7 @@
 
   const isDark = useDark()
 
-  const currentTab = ref('inputs')
+  const currentTab = ref('icons')
   const tabs: Tab[] = [
     {
       label: 'Tabs section',

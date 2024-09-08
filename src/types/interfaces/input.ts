@@ -12,4 +12,5 @@ export interface InputProps {
   error?: boolean
   success?: boolean
   warning?: boolean
+  password?: boolean
 }
