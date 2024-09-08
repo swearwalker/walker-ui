@@ -7,13 +7,13 @@
       </div>
       <div class="icons-section__content">
         <span class="icons-section__label">Change icon size(You can use any size)</span>
-        <select v-model="selectedSize" class="icons-section__size">
+        <select v-model="selectedSize" class="icons-section__select">
           <option v-for="size in iconSizes" :key="size" :value="size">{{ size }}</option>
         </select>
       </div>
       <div class="icons-section__content">
         <span class="icons-section__label">Change color</span>
-        <select v-model="selectedColor" class="icons-section__size">
+        <select v-model="selectedColor" class="icons-section__select">
           <option v-for="color in colors" :key="color" :value="color">{{ color }}</option>
         </select>
       </div>
@@ -161,7 +161,7 @@
       }
     }
 
-    &__size {
+    &__select {
       @apply cursor-pointer p-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-500 outline-none bg-transparent transition-all;
 
       &:focus {

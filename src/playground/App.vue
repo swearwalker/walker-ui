@@ -13,6 +13,7 @@
       <TogglesSection v-if="currentTab === 'toggles'" />
       <IconsSection v-if="currentTab === 'icons'" />
       <InputsSection v-if="currentTab === 'inputs'" />
+      <LoadersSection v-if="currentTab === 'loaders'" />
     </div>
   </main>
 </template>
@@ -26,10 +27,11 @@
   import TabsSection from './components/TabsSection.vue'
   import TogglesSection from './components/TogglesSection.vue'
   import InputsSection from './components/InputsSection.vue'
+  import LoadersSection from './components/LoadersSection.vue'
 
   const isDark = useDark()
 
-  const currentTab = ref('icons')
+  const currentTab = ref('tabs')
   const tabs: Tab[] = [
     {
       label: 'Tabs section',
@@ -46,6 +48,10 @@
     {
       label: 'Inputs section',
       value: 'inputs',
+    },
+    {
+      label: 'Loaders section',
+      value: 'loaders',
     },
   ]
 </script>
