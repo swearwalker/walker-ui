@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/swearwalker/walker-ui/compare/v1.3.5...v1.5.0) (2024-09-08)
+
 ## [1.4.0](https://github.com/swearwalker/walker-ui/compare/v1.3.5...v1.4.0) (2024-09-08)
 
 ### [1.3.5](https://github.com/swearwalker/walker-ui/compare/v1.3.4...v1.3.5) (2024-09-06)
