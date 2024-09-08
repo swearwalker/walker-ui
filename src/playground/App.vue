@@ -9,10 +9,11 @@
   <main class="main">
     <div class="container">
       <WTabs v-model="currentTab" :tabs="tabs" />
+      <BtnsSection v-if="currentTab === 'btns'" />
+      <InputsSection v-if="currentTab === 'inputs'" />
       <TabsSection v-if="currentTab === 'tabs'" />
       <TogglesSection v-if="currentTab === 'toggles'" />
       <IconsSection v-if="currentTab === 'icons'" />
-      <InputsSection v-if="currentTab === 'inputs'" />
       <LoadersSection v-if="currentTab === 'loaders'" />
     </div>
   </main>
@@ -23,6 +24,7 @@
   import { WTabs, WToggle } from '../components'
   import { useDark } from '@vueuse/core'
   import type { Tab } from '../types'
+  import BtnsSection from './components/BtnsSection.vue'
   import IconsSection from './components/IconsSection.vue'
   import TabsSection from './components/TabsSection.vue'
   import TogglesSection from './components/TogglesSection.vue'
@@ -31,8 +33,16 @@
 
   const isDark = useDark()
 
-  const currentTab = ref('tabs')
+  const currentTab = ref('btns')
   const tabs: Tab[] = [
+    {
+      label: 'Buttons section',
+      value: 'btns',
+    },
+    {
+      label: 'Inputs section',
+      value: 'inputs',
+    },
     {
       label: 'Tabs section',
       value: 'tabs',
@@ -46,10 +56,6 @@
       value: 'icons',
     },
     {
-      label: 'Inputs section',
-      value: 'inputs',
-    },
-    {
       label: 'Loaders section',
       value: 'loaders',
     },
@@ -59,9 +65,12 @@
 <style lang="scss">
   html,
   body,
-  #app,
-  main {
+  #app {
     @apply w-full h-full bg-gray-50 text-gray-900 dark:text-gray-200 dark:bg-gray-900;
+  }
+
+  main {
+    @apply w-full bg-gray-50 text-gray-900 dark:text-gray-200 dark:bg-gray-900;
   }
 
   .header {
