@@ -7,13 +7,13 @@
       </div>
       <div class="icons-section__content">
         <span class="icons-section__label">Change icon size(You can use any size)</span>
-        <select v-model="selectedSize" class="icons-section__size">
+        <select v-model="selectedSize" class="icons-section__select">
           <option v-for="size in iconSizes" :key="size" :value="size">{{ size }}</option>
         </select>
       </div>
       <div class="icons-section__content">
         <span class="icons-section__label">Change color</span>
-        <select v-model="selectedColor" class="icons-section__size">
+        <select v-model="selectedColor" class="icons-section__select">
           <option v-for="color in colors" :key="color" :value="color">{{ color }}</option>
         </select>
       </div>
@@ -47,33 +47,65 @@
   const selectedColor = ref<string>(ColorScheme.PRIMARY)
   const icons = ref<string[]>([
     'add',
+    'add-circle',
+    'arrow-next',
+    'arrow-prev',
     'block',
+    'bookmark',
+    'caret-down',
+    'caret-left',
+    'caret-right',
+    'caret-up',
+    'check',
+    'check-circle',
     'chevron-down',
     'chevron-left',
     'chevron-right',
     'chevron-up',
+    'clipboard',
     'clock',
     'copy',
     'delete',
     'dismiss',
+    'dismiss-circle',
     'edit',
+    'error-circle',
     'filter',
+    'full-max',
+    'full-min',
     'hide',
+    'history',
     'image',
-    'info',
+    'info-circle',
+    'key',
+    'like',
+    'link',
     'minus',
+    'minus-circle',
     'more-horizontal',
     'more-vertical',
+    'open',
     'options',
+    'pane-close',
+    'pane-open',
+    'password',
+    'pin',
     'play',
+    'play-circle',
     'power',
+    'question',
+    'question-circle',
     'save',
     'search',
     'settings',
     'share',
     'show',
+    'sort',
+    'star',
+    'tag',
     'user',
     'users',
+    'warning',
   ])
   const iconSizes = ref<number[]>([12, 16, 20, 24, 32, 40, 48])
   const colors = [
@@ -129,7 +161,7 @@
       }
     }
 
-    &__size {
+    &__select {
       @apply cursor-pointer p-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-500 outline-none bg-transparent transition-all;
 
       &:focus {
