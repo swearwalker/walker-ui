@@ -11,6 +11,7 @@
       <WTabs v-model="currentTab" :tabs="tabs" />
       <BtnsSection v-if="currentTab === 'btns'" />
       <InputsSection v-if="currentTab === 'inputs'" />
+      <OtherInputsSection v-if="currentTab === 'other-inputs'" />
       <TabsSection v-if="currentTab === 'tabs'" />
       <TogglesSection v-if="currentTab === 'toggles'" />
       <IconsSection v-if="currentTab === 'icons'" />
@@ -30,6 +31,7 @@
   import TogglesSection from './components/TogglesSection.vue'
   import InputsSection from './components/InputsSection.vue'
   import LoadersSection from './components/LoadersSection.vue'
+  import OtherInputsSection from './components/OtherInputsSection.vue'
 
   const isDark = useDark()
 
@@ -42,6 +44,10 @@
     {
       label: 'Inputs section',
       value: 'inputs',
+    },
+    {
+      label: 'Other inputs section',
+      value: 'other-inputs',
     },
     {
       label: 'Tabs section',

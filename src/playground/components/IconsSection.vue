@@ -23,13 +23,15 @@
       leave-active-class="animate__animated animate__bounceOut"
     >
       <template v-for="icon in filteredIcons" :key="icon">
-        <div
-          :class="[{ selected: selectedIcon === icon }, selectedColor]"
-          class="icons-section__card"
-          @click="copyAndSelect(icon)"
-        >
-          <WIcon class="icons-section__icon" :icon="icon" :size="selectedSize" />
-          <span class="icons-section__label">{{ icon }}</span>
+        <div class="icons-section__card">
+          <div
+            :class="[{ selected: selectedIcon === icon }, selectedColor]"
+            class="icons-section__wrap"
+            @click="copyAndSelect(icon)"
+          >
+            <WIcon class="icons-section__icon" :icon="icon" :size="selectedSize" />
+            <span class="icons-section__label">{{ icon }}</span>
+          </div>
         </div>
       </template>
     </TransitionGroup>
@@ -58,6 +60,10 @@
     'caret-up',
     'check',
     'check-circle',
+    'checkbox-checked',
+    'checkbox-checked-filled',
+    'checkbox-indeterminate',
+    'checkbox-unchecked',
     'chevron-down',
     'chevron-left',
     'chevron-right',
@@ -95,6 +101,8 @@
     'power',
     'question',
     'question-circle',
+    'radio',
+    'radio-checked',
     'save',
     'search',
     'settings',
@@ -143,7 +151,7 @@
 
 <style scoped lang="scss">
   .icons-section {
-    @apply flex flex-wrap gap-4;
+    @apply flex flex-wrap;
 
     &__wrapper {
       @apply w-full flex-row mb-4 gap-x-8;
@@ -170,7 +178,11 @@
     }
 
     &__card {
-      @apply flex flex-col items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 p-4 w-40 transition-all cursor-pointer;
+      @apply flex flex-col items-center justify-center w-1/12 p-2;
+    }
+
+    &__wrap {
+      @apply flex flex-col items-center justify-center rounded-lg border transition-all cursor-pointer px-2 py-4 w-full;
 
       &.primary {
         &:hover {
@@ -232,7 +244,7 @@
     }
 
     &__label {
-      @apply text-sm text-center transition-all;
+      @apply text-xs text-center transition-all truncate w-full;
     }
   }
 </style>
